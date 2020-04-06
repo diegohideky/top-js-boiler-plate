@@ -1,0 +1,61 @@
+{
+  "name": "top-js-boiler-plate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "engines": {
+    "node": "12.13.1",
+    "yarn": "1.19.0"
+  },
+  "scripts": {
+    "start:dev": "NODE_ENV=dev nodemon src/server.js",
+    "start:debug": "NODE_ENV=dev nodemon src/server.js --inspect",
+    "pretest": "yarn mg:test",
+    "test": "NODE_ENV=test jest --no-cache --detectOpenHandles",
+    "test:watch": "yarn test --watchAll",
+    "test:coverage": "yarn test --coverage",
+    "test:dev": "yarn lint && yarn test:coverage",
+    "lint": "eslint ./src/**/**/*.js",
+    "lint:fix": "yarn lint --fix",
+    "dc:up": "docker-compose up --build -d",
+    "dc:down": "docker-compose down",
+    "mg": "NODE_ENV=dev node_modules/.bin/sequelize db:migrate",
+    "mg:undo": "NODE_ENV=dev node_modules/.bin/sequelize db:migrate:undo",
+    "mg:test": "NODE_ENV=test node_modules/.bin/sequelize db:migrate",
+    "mg:test:undo": "NODE_ENV=test node_modules/.bin/sequelize db:migrate:undo"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-http-proxy": "^1.6.0",
+    "helmet": "^3.22.0",
+    "jest": "^25.2.7",
+    "morgan": "^1.10.0",
+    "parse-database-url": "^0.3.0",
+    "pg": "^8.0.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.5",
+    "supertest": "^4.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/register": "^7.9.0",
+    "babel-eslint": "^10.1.0",
+    "babel-preset-latest-node": "^4.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "2.7.0",
+    "nodemon": "^2.0.2",
+    "sequelize-cli": "^5.5.1"
+  }
+}
