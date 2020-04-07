@@ -8,6 +8,9 @@
     "yarn": "1.19.0"
   },
   "scripts": {
+    "postinstall": "yarn build",
+    "build": "rimraf dist && babel src -s -D -d dist",
+    "start": "node dist/server.js",
     "start:dev": "NODE_ENV=dev nodemon src/server.js",
     "start:debug": "NODE_ENV=dev nodemon src/server.js --inspect",
     "pretest": "yarn mg:test",
@@ -56,6 +59,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "husky": "2.7.0",
     "nodemon": "^2.0.2",
+    "rimraf": "^3.0.2",
     "sequelize-cli": "^5.5.1"
   }
 }
