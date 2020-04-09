@@ -1,7 +1,7 @@
 import Service from './service'
 
 class FooCtrl {
-  async findAll (req, res) {
+  async findAll(req, res) {
     try {
       const foo = await Service.findAll()
 
@@ -36,7 +36,6 @@ class FooCtrl {
 
       return res.status(204).json({ foo: updated })
     } catch (err) {
-      console.log({ err })
       return res.status(400).json({ err })
     }
   }

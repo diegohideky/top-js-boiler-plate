@@ -6,24 +6,24 @@ const Foo = db.define('foo', {
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
-    type: Sequelize.INTEGER,
+    type: Sequelize.INTEGER
   },
   name: {
     allowNull: false,
-    type: Sequelize.STRING,
+    type: Sequelize.STRING
   },
   createdAt: {
     allowNull: false,
     field: 'created_at',
-    type: Sequelize.DATE,
+    type: Sequelize.DATE
   },
   updatedAt: {
     allowNull: false,
     field: 'updated_at',
-    type: Sequelize.DATE,
-  },
+    type: Sequelize.DATE
+  }
 }, {
-  freezeTableName: true,
+  freezeTableName: true
 })
 
 export default Foo
