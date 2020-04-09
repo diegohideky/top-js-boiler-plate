@@ -1,7 +1,7 @@
 {
   "name": "top-js-boiler-plate",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/server.js",
   "license": "MIT",
   "engines": {
     "node": "12.13.0",
@@ -11,8 +11,8 @@
     "postinstall": "yarn build",
     "build": "rimraf dist && babel src -s -D -d dist",
     "start": "node dist/server.js",
-    "start:dev": "NODE_ENV=dev nodemon src/server.js",
-    "start:debug": "NODE_ENV=dev nodemon src/server.js --inspect",
+    "start:dev": "NODE_ENV=dev nodemon --exec \"babel-node\" src/server.js",
+    "start:debug": "NODE_ENV=dev nodemon --exec \"babel-node\" src/server.js --inspect",
     "pretest": "yarn mg:test",
     "test": "NODE_ENV=test jest --no-cache --detectOpenHandles",
     "test:watch": "yarn test --watchAll",
